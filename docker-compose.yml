@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  bithumb:
+    build: .
+    container_name: bithumb
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./cookies:/app/cookies
+      - C:\Users\Royal Computers\BITHUMB\proxies.txt:/app/proxies.txt
+    environment:
+      - RUNTIME_ENV=container
+      - TZ=Europe/Moscow
+    restart: unless-stopped
